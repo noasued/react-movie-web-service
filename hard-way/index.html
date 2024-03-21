@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"></div>
+    </body>
+    <!-- interactive UI -->
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <!-- put react element in the html -->
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script>
+        // in hard way
+        const root = document.getElementById("root");
+        const span = React.createElement(
+             "span",    // where
+             {                      // property(class name or id)
+                id : "sexy-span",
+                style: {color:"red"}
+             },
+             "Hello, I'm a span"    // content
+        );
+        
+        ReactDOM.render(span, root);
+    </script>
+</html>
