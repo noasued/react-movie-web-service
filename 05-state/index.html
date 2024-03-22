@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"></div>
+    </body>
+    <!-- interactive UI -->
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <!-- put react element in the html -->
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <!-- babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // state () -- trigger rerender
+        // 
+        const root = document.getElementById("root");
+        function App() {
+            //     값     왼쪽 값을 변화시킬 수 있는 modifier 함수. rerender 시켜줌
+            const [counter, setCounter] = React.useState(0);
+            // modify the state , react.js rerender the component
+            const onClick = () => {
+                setCounter(counter + 1);
+            };
+
+            return(
+                <div>
+                    <h3>Total Clicks : {counter}</h3>
+                    <button onClick={onClick}>Click me!</button>
+                </div>
+            );
+        }
+        ReactDOM.render(<App />, root);
+    </script>
+</html> 
